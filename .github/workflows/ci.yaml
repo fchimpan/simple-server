@@ -34,7 +34,7 @@ jobs:
             - name: test
               run: go test ./... -coverprofile=coverage.txt
             - name: report coverage
-              uses: K1Low/octocov-action@v0.6
+              uses: K1Low/octocov-action@v0.20
     lint:
         runs-on: ubuntu-latest
         steps:
