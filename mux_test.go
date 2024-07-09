@@ -1,16 +1,26 @@
 package main
 
 import (
+	"context"
 	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/fchimpan/simple-server/config"
 )
 
 func TestNewMux(t *testing.T) {
 	w := httptest.NewRecorder()
 	r := httptest.NewRequest(http.MethodGet, "/health", nil)
-	m := NewMux()
+	cfg, err := config.New()
+	if err != nil {
+		t.Fatal(err)
+	}
+	m, _, err := NewMux(context.Background(), cfg)
+	if err != nil {
+		t.Fatalf("failed to create mux: %v", err)
+	}
 	m.ServeHTTP(w, r)
 	resp := w.Result()
 

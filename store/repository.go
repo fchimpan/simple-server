@@ -8,6 +8,7 @@ import (
 
 	"github.com/fchimpan/simple-server/clock"
 	"github.com/fchimpan/simple-server/config"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
 )
 

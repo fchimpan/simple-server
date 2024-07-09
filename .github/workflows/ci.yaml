@@ -25,6 +25,15 @@ jobs:
                   MYSQL_DATABASE: todo
                   MYSQL_USER: todo
                   MYSQL_PASSWORD: todo
+            redis:
+                image: redis:7.2.5
+                options: >-
+                  --health-cmd "redis-cli ping"
+                  --health-interval 20s
+                  --health-timeout 10s
+                  --health-retries 10
+                ports:
+                  - 6379:6379
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-go@v5

@@ -4,11 +4,10 @@ import (
 	"net/http"
 
 	"github.com/fchimpan/simple-server/entity"
-	"github.com/fchimpan/simple-server/store"
 )
 
 type ListTask struct {
-	Store *store.TaskStore
+	Service ListTasksService
 }
 
 type task struct {
@@ -18,7 +17,13 @@ type task struct {
 }
 
 func (lt *ListTask) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	tasks := lt.Store.All()
+	tasks, err := lt.Service.ListTasks(r.Context())
+	if err != nil {
+		RespondJSON(r.Context(), w, &ErrResponse{
+			Message: err.Error(),
+		}, http.StatusInternalServerError)
+		return
+	}
 	resp := []task{}
 	for _, t := range tasks {
 		resp = append(resp, task{
