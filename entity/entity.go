@@ -1,6 +1,10 @@
 package entity
 
-import "time"
+import (
+	"time"
+
+	"golang.org/x/crypto/bcrypt"
+)
 
 type TaskID int64
 type TaskStatus string
@@ -13,6 +17,7 @@ const (
 
 type Task struct {
 	ID         TaskID     `json:"id" db:"id"`
+	UserID     UserID     `json:"user_id" db:"user_id"`
 	Title      string     `json:"title" db:"title"`
 	Status     TaskStatus `json:"status" db:"status"`
 	CreatedAt  time.Time  `json:"created_at" db:"created_at"`
@@ -29,4 +34,8 @@ type User struct {
 	Role       string    `json:"role" db:"role"`
 	CreatedAt  time.Time `json:"created_at" db:"created_at"`
 	ModifiedAt time.Time `json:"modified_at" db:"modified_at"`
+}
+
+func (u *User) ComparePassword(pw string) error {
+	return bcrypt.CompareHashAndPassword([]byte(u.Password), []byte(pw))
 }
