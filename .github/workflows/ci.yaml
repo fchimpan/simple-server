@@ -12,7 +12,7 @@ jobs:
         runs-on: ubuntu-latest
         services:
             mysql:
-                image: mysql:8.0.29
+                image: mysql:9.0.1
                 options: >-
                   --health-cmd "mysqladmin ping -h localhost"
                   --health-interval 20s
