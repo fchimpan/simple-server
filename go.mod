@@ -14,7 +14,7 @@ require (
 	github.com/matryer/moq v0.3.4
 	github.com/redis/go-redis/v9 v9.5.3
 	golang.org/x/crypto v0.25.0
-	golang.org/x/sync v0.7.0
+	golang.org/x/sync v0.8.0
 )
 
 require (
