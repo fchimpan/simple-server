@@ -22,3 +22,7 @@ type RegisterUserService interface {
 type LoginService interface {
 	Login(ctx context.Context, name, pw string) (string, error)
 }
+
+type UpdateTaskService interface {
+	UpdateTask(ctx context.Context, id entity.TaskID, title string, status entity.TaskStatus) (*entity.Task, error)
+}

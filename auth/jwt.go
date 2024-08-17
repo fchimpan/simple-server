@@ -65,7 +65,7 @@ func (j *JWTer) GenerateToken(ctx context.Context, user entity.User) ([]byte, er
 		Issuer(`github.com/fchimpan/simple-server`).
 		Subject("access_token").
 		IssuedAt(j.Clocker.Now()).
-		Expiration(j.Clocker.Now().Add(30*time.Minute)).
+		Expiration(j.Clocker.Now().Add(60*time.Minute)).
 		Claim(RoleKey, user.Role).
 		Claim(UserNameKey, user.Name).
 		Build()

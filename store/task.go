@@ -2,6 +2,7 @@ package store
 
 import (
 	"context"
+	"errors"
 
 	"github.com/fchimpan/simple-server/entity"
 )
@@ -33,5 +34,23 @@ func (r *Repository) AddTask(ctx context.Context, db Execer, t *entity.Task) err
 	// 呼び出し元に auto increment された ID を返す
 	t.ID = entity.TaskID(id)
 
+	return nil
+}
+
+func (r *Repository) UpdateTask(ctx context.Context, db Execer, t *entity.Task) error {
+	t.ModifiedAt = r.Clocker.Now()
+
+	sql := `UPDATE task SET title = ?, status = ?, modified_at = ? WHERE id = ? AND user_id = ?;`
+	res, err := db.ExecContext(ctx, sql, t.Title, t.Status, t.ModifiedAt, t.ID, t.UserID)
+	if err != nil {
+		return err
+	}
+	affected, err := res.RowsAffected()
+	if err != nil {
+		return err
+	}
+	if affected == 0 {
+		return errors.New("task not found")
+	}
 	return nil
 }

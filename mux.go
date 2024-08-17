@@ -54,11 +54,16 @@ func NewMux(ctx context.Context, cfg *config.Config) (http.Handler, func(), erro
 		Service: &service.ListTasks{DB: db, Repo: repo},
 	}
 
+	ut := &handler.UpdateTask{
+		Service:   &service.UpdateTask{DB: db, Repo: repo},
+		Validator: v,
+	}
+
 	mux.Route("/tasks", func(r chi.Router) {
 		r.Use(handler.AuthMiddleware(jwter))
 		r.Get("/", lt.ServeHTTP)
 		r.Post("/", at.ServeHTTP)
-
+		r.Put("/{id}", ut.ServeHTTP)
 	})
 
 	ru := &handler.RegisterUser{
