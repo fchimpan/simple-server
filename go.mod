@@ -3,7 +3,7 @@ module github.com/fchimpan/simple-server
 go 1.22.4
 
 require (
-	github.com/caarlos0/env/v11 v11.1.0
+	github.com/caarlos0/env/v11 v11.2.2
 	github.com/go-chi/chi/v5 v5.0.14
 	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/go-sql-driver/mysql v1.8.1
