@@ -1,4 +1,4 @@
-FROM golang:1.22-bullseye as builder
+FROM golang:1.23-bullseye as builder
 
 WORKDIR /app
 
@@ -18,7 +18,7 @@ COPY --from=builder /app/app .
 CMD ["./app"]
 
 # Local development stage
-FROM golang:1.22 as dev
+FROM golang:1.23 as dev
 
 WORKDIR /app
 
