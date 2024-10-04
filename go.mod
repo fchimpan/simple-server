@@ -13,7 +13,7 @@ require (
 	github.com/lestrrat-go/jwx/v2 v2.1.0
 	github.com/matryer/moq v0.3.4
 	github.com/redis/go-redis/v9 v9.5.3
-	golang.org/x/crypto v0.25.0
+	golang.org/x/crypto v0.28.0
 	golang.org/x/sync v0.7.0
 )
 
@@ -33,7 +33,7 @@ require (
 	github.com/lestrrat-go/option v1.0.1 // indirect
 	github.com/segmentio/asm v1.2.0 // indirect
 	golang.org/x/mod v0.19.0 // indirect
-	golang.org/x/sys v0.22.0 // indirect
+	golang.org/x/sys v0.26.0 // indirect
 	golang.org/x/tools v0.22.0 // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 )
