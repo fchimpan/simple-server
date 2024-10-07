@@ -33,7 +33,7 @@ services:
     ports:
       - "33306:3306"
   todo-redis:
-    image: redis:7.2.5
+    image: redis:7.4.1
     container_name: todo-redis
     ports:
       - "36379:6379"
