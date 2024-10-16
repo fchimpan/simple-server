@@ -19,7 +19,7 @@ services:
       TODO_REDIS_HOST: todo-redis
       TODO_REDIS_PORT: 6379
   todo-db:
-    image: mysql:8.0.29
+    image: mysql:9.1.0
     platform: linux/amd64
     container_name: todo-db
     environment:
