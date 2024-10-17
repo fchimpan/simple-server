@@ -12,7 +12,7 @@ require (
 	github.com/jmoiron/sqlx v1.4.0
 	github.com/lestrrat-go/jwx/v2 v2.1.0
 	github.com/matryer/moq v0.3.4
-	github.com/redis/go-redis/v9 v9.5.3
+	github.com/redis/go-redis/v9 v9.7.0
 	golang.org/x/crypto v0.25.0
 	golang.org/x/sync v0.7.0
 )
