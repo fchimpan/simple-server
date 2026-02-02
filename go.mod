@@ -1,6 +1,6 @@
 module github.com/fchimpan/simple-server
 
-go 1.22.4
+go 1.25
 
 require (
 	github.com/caarlos0/env/v11 v11.1.0
@@ -11,10 +11,10 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/jmoiron/sqlx v1.4.0
 	github.com/lestrrat-go/jwx/v2 v2.1.0
-	github.com/matryer/moq v0.3.4
+	github.com/matryer/moq v0.6.0
 	github.com/redis/go-redis/v9 v9.5.3
 	golang.org/x/crypto v0.25.0
-	golang.org/x/sync v0.7.0
+	golang.org/x/sync v0.11.0
 )
 
 require (
@@ -32,8 +32,8 @@ require (
 	github.com/lestrrat-go/iter v1.0.2 // indirect
 	github.com/lestrrat-go/option v1.0.1 // indirect
 	github.com/segmentio/asm v1.2.0 // indirect
-	golang.org/x/mod v0.19.0 // indirect
-	golang.org/x/sys v0.22.0 // indirect
-	golang.org/x/tools v0.22.0 // indirect
+	golang.org/x/mod v0.23.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
+	golang.org/x/tools v0.30.0 // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 )
