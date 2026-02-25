@@ -6,7 +6,7 @@ require (
 	github.com/caarlos0/env/v11 v11.1.0
 	github.com/go-chi/chi/v5 v5.0.14
 	github.com/go-playground/validator v9.31.0+incompatible
-	github.com/go-sql-driver/mysql v1.8.1
+	github.com/go-sql-driver/mysql v1.9.3
 	github.com/google/go-cmp v0.6.0
 	github.com/google/uuid v1.6.0
 	github.com/jmoiron/sqlx v1.4.0
